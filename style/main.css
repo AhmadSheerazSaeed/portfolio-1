@@ -1,0 +1,633 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  font-size: 62.5%;
+  --animationTime: 3s;
+  --animation-delay: 2s;
+  --text-crimson: crimson;
+  --text-white: white;
+  --text-and-bg-black: black;
+  --logo-font-size: 1.5rem;
+  --h1-font-size: 4rem;
+  --h2-font-size: 3rem;
+  --h4-font-size: 2rem;
+  --a-links-font-size: 1.3rem;
+  --p-text-font-size: 1.3rem;
+  --left-right-section-margins: 20px;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* main wrapper all the elements are inside this wrapper */
+.main-wrapper {
+  position: relative;
+  min-width: 100%;
+
+  margin: 0px auto;
+}
+
+/* link which will take you to the top */
+.fixed-link-go-top {
+  color: var(--text-crimson);
+  position: fixed;
+  bottom: calc(0px + 20px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: var(--text-white); */
+  animation: top-btn-animation 5s linear infinite;
+}
+
+@keyframes top-btn-animation {
+  0% {
+    background-color: crimson;
+  }
+  25% {
+    background-color: black;
+  }
+  50% {
+    background-color: crimson;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: crimson;
+  }
+}
+
+.fixed-link-go-top svg {
+  display: block;
+  cursor: pointer;
+}
+
+/* hero section */
+.hero-section {
+  background-color: var(--text-and-bg-black);
+  min-height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* logo and navigation */
+header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* text in the logo */
+.logo-link {
+  margin-left: 30px;
+  font-size: var(--a-links-font-size);
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.nav-menu-circle {
+  margin-right: 30px;
+}
+
+/* text in logo with crimson color */
+.logo-link span {
+  color: var(--text-crimson);
+}
+
+/* svg animation starts */
+
+#circle100 {
+  fill: black;
+  /* animation: circleAnimation100 var(--animationTime) ease infinite; */
+}
+
+#circle80 {
+  animation: circleAnimation80 var(--animationTime) ease infinite
+    var(--animation-delay);
+}
+
+#circle60 {
+  animation: circleAnimation60 var(--animationTime) ease infinite
+    var(--animation-delay);
+}
+
+#circle40 {
+  animation: circleAnimation40 var(--animationTime) ease infinite;
+}
+
+#circle20 {
+  animation: circleAnimation20 var(--animationTime) ease infinite;
+}
+
+@keyframes circleAnimation100 {
+  25% {
+    fill: lightblue;
+    opacity: 1%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes circleAnimation80 {
+  25% {
+    fill: white;
+    opacity: 1%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes circleAnimation60 {
+  25% {
+    fill: rgb(222, 220, 220);
+    opacity: 1%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes circleAnimation40 {
+  25% {
+    fill: rgb(181, 200, 206);
+    opacity: 1%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes circleAnimation20 {
+  25% {
+    fill: rgb(99, 187, 213);
+    opacity: 1%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+
+/* main menu display when clicked */
+
+.menuMain {
+  /* display: none; */
+}
+
+#checkboxInputForMenu {
+  display: none;
+}
+
+/* svg animation ends */
+
+.input-checkbox {
+  display: none;
+}
+
+.input-checkbox:checked ~ nav {
+  display: block;
+}
+
+/* navigation position is absolute so i can position it according to desire */
+.navigation-main {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  background-color: black;
+  padding: 20px;
+  height: 200px;
+}
+
+.navigation-main ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navigation-main ul li {
+  list-style: none;
+}
+
+.navigation-main ul li a {
+  text-decoration: none;
+  line-height: 2.9rem;
+  font-size: var(--a-links-font-size);
+  color: var(--text-white);
+}
+
+.navigation-main ul li a:hover {
+  text-decoration: underline 2px solid var(--text-crimson);
+}
+
+/* change text color to crimson */
+nav ul li a span {
+  color: var(--text-and-bg-black);
+  color: var(--text-crimson);
+}
+
+/* ul disappears and shows again when circle has been clicked */
+nav {
+  display: none;
+  width: 90%;
+}
+
+/* main first page */
+.first-page {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* headings of first page */
+.first-page > section > h1,
+.passionateDeveloper > h1 {
+  color: var(--text-white);
+  font-size: var(--h1-font-size);
+  line-height: 6rem;
+}
+
+/* change color of characters in first page headings */
+.first-page > section > h1 span {
+  color: var(--text-crimson);
+}
+
+/* change display of headings of first page, in media query change flex direction to row */
+.first-lines-heading,
+.developerName,
+.passionateDeveloper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* buttons in first page */
+.firstPage-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* styling of button with class and use it in all over the project */
+.btns {
+  background: transparent;
+  border: none;
+  outline: 1px solid var(--text-crimson);
+  width: 120px;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.btn-more-about-me {
+  margin-bottom: 2rem;
+}
+
+.btns > a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+/* about me page styling starts */
+.about-me-section {
+  /* min-height: 100vh;
+  max-height: 100%; */
+  margin: 0 var(--left-right-section-margins);
+}
+
+.about-me-section h1 {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--text-crimson);
+  font-size: var(--h1-font-size);
+}
+
+.about-me-section h2 {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: var(--h2-font-size);
+  line-height: 2.6rem;
+}
+
+.about-me-section h4 {
+  margin-top: 2rem;
+  font-size: var(--h4-font-size);
+}
+
+.about-me-section p {
+  margin-top: 0.5rem;
+  font-size: var(--p-text-font-size);
+  text-align: justify;
+}
+
+.about-me-section .h2-my-skills {
+  margin-top: 3rem;
+  text-align: left;
+  color: var(--text-and-bg-black);
+}
+
+.about-me-section .h2-my-skills span {
+  /* text-align: left; */
+  color: var(--text-crimson);
+}
+
+.skills-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  place-items: center;
+}
+
+/* latest projects  */
+.latest-projects-section {
+  /* height: 100vh; */
+  margin-top: 15rem;
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+.latest-projects-section h1 {
+  font-size: var(--h1-font-size);
+  text-align: center;
+}
+
+.latest-projects-section figure {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.project-card {
+  margin-top: 7rem;
+  margin-bottom: 9rem;
+}
+
+.sub-section-card h4 {
+  text-align: center;
+  font-size: var(--h4-font-size);
+  margin: 0 var(--left-right-section-margins);
+  margin-top: 2rem;
+}
+
+.sub-section-card p {
+  font-size: var(--p-text-font-size);
+  margin: 0 var(--left-right-section-margins);
+  text-align: justify;
+  margin-top: 0.5rem;
+}
+
+.latest-projects-section figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-btns button a {
+  text-decoration: none;
+  color: var(--text-and-bg-black);
+}
+
+/* section contact */
+.contact-section {
+  /* min-height: 100vh;
+  max-height: 100%; */
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-section h1 {
+  font-size: var(--h1-font-size);
+  color: var(--text-and-bg-black);
+}
+
+.contact-section h1 span,
+.contact-section h4 span {
+  color: var(--text-crimson);
+}
+
+.contact-section h4 {
+  font-size: var(--h4-font-size);
+  margin: 3rem var(--left-right-section-margins) 0
+    var(--left-right-section-margins);
+}
+
+.contact-form {
+  width: 90%;
+  border-radius: 5px;
+  background-color: lightgray;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.contact-form > label,
+.contact-form > input,
+.contact-form > textarea {
+  width: 90%;
+  border: none;
+  margin-top: 0.5rem;
+  font-size: var(--p-text-font-size);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.contact-form > input,
+.contact-form > textarea {
+  background-color: var(--text-and-bg-black);
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+.contact-form label {
+  font-weight: bold;
+  padding-left: 0%;
+}
+
+.contact-form-btn {
+  background-color: var(--text-white);
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.contact-section button a {
+  color: var(--text-and-bg-black);
+  font-size: var(--a-links-font-size);
+}
+
+/* footer section */
+.footer-section {
+  /* min-height: 100vh;
+  max-height: 100%; */
+  height: 250px;
+  margin-top: 8rem;
+  background-color: var(--text-crimson);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.social-media-icons-and-heading h4 {
+  font-size: var(--h4-font-size);
+  color: var(--text-white);
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.social-media-icons figure {
+  width: 22px;
+  margin-left: 1rem;
+}
+
+.fa-github,
+.fa-square-twitter,
+.fa-linkedin,
+.fa-square-youtube {
+  font-size: 2rem;
+  /* padding-right: 20px; */
+}
+
+.name-in-footer {
+  margin-top: 2rem;
+}
+
+.name-in-footer p {
+  color: var(--text-white);
+  font-size: var(--p-text-font-size);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.name-in-footer p span {
+  color: var(--text-and-bg-black);
+}
+
+.footer-section p {
+  margin-top: 2rem;
+  color: var(--text-white);
+  text-align: center;
+  font-size: var(--p-text-font-size);
+}
+
+/* media query for tablets */
+@media screen and (min-width: 700px) {
+  /* navigation */
+  nav {
+    display: block;
+  }
+
+  /* heading in the first page */
+  .first-lines-heading {
+    margin-top: 13rem;
+  }
+
+  svg {
+    display: none;
+  }
+
+  .navigation-main {
+    position: static;
+    background-color: black;
+    height: 40px;
+    padding: 0px;
+  }
+
+  .navigation-main ul {
+    flex-direction: row;
+  }
+
+  .navigation-main ul li a {
+    padding-left: 15px;
+  }
+
+  /* firsts page headings etc */
+  .first-lines-heading,
+  .developerName,
+  .passionateDeveloper {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .firstPage-buttons {
+    margin-top: 5rem;
+  }
+
+  /* about me section */
+  .about-me-section .h2-my-skills {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  .skills-buttons {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+  }
+}
